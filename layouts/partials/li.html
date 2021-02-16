@@ -12,8 +12,8 @@
 				</div>
 				{{ end }}
 				<div class="w-100 w6-ns pl3-ns">
-					<h1 class="f3 fw1 mt0 lh-title"><a href="{{ .Permalink }}" class="color-inherit dim link">
-						<h2> {{ .Date.Format "Jan 2, 2006" }} </h2>
+					<h2 class="f3 fw1 mt0 lh-title"><a href="{{ .Permalink }}" class="color-inherit dim link">
+						<div class="f5 fw1 mt1"> {{ .Date.Format "Jan 2, 2006" }} </div>
 					{{- if eq .Section "talks" }}{{ .Params.event }}: {{ end -}}
 					{{- cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) -}}
 					</a></h1>
