@@ -6,12 +6,14 @@
 				{{ if $hdr }}
 				<div class="mb4 mb0-ns w-100 h4 h4-m w4-m h5-ns w5-ns br3 cover {{ if lt .Date.Unix now.Unix }}hide-child{{ end }}" style="background-image: url('{{ absURL (default "img/default-header-img.tn-500x500.jpg" (default .Params.image .Params.thumbnail)) }}'); background-position: center;">
 					<a href="{{ .Permalink }}" class="sans-serif db child w-100 h-100 f7 lh-copy white no-underline br3 ph3 pt4 pt5-l ttu tc bg-black-60">
-						<i class="mt3 mt5-l child far {{ cond (gt .Date.Unix now.Unix) "fa-hourglass" "fa-calendar-alt" }}"></i> {{ .Date.Format "Jan 2, 2006" }}
+						
 					</a>
+					<i class="mt3 mt5-l child far {{ cond (gt .Date.Unix now.Unix) "fa-hourglass" "fa-calendar-alt" }}"></i> {{ .Date.Format "Jan 2, 2006" }}
 				</div>
 				{{ end }}
 				<div class="w-100 w6-ns pl3-ns">
 					<h1 class="f3 fw1 mt0 lh-title"><a href="{{ .Permalink }}" class="color-inherit dim link">
+						<h2> {{ .Date.Format "Jan 2, 2006" }} </h2>
 					{{- if eq .Section "talks" }}{{ .Params.event }}: {{ end -}}
 					{{- cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) -}}
 					</a></h1>
